@@ -1,0 +1,9 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+# Google Contacts API
+gem "google-apis-people_v1"
+# Calendar scope included in OAuth token for shared auth with calendar skill (optional)
+gem "google-apis-calendar_v3"
+gem "googleauth"

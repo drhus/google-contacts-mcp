@@ -1,0 +1,42 @@
+{
+  "name": "google-contacts-mcp",
+  "version": "1.1.2",
+  "description": "MCP server for Google Contacts - list, search, and manage contacts",
+  "license": "MIT",
+  "author": "Hus (drhus)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drhus/google-contacts-mcp.git"
+  },
+  "bin": "dist/main.js",
+  "files": [
+    "dist"
+  ],
+  "mcpName": "io.github.drhus/google-contacts-mcp",
+  "scripts": {
+    "start": "npm run build && node ./dist/main.js",
+    "start:http": "npm run build && MCP_TRANSPORT=http node ./dist/main.js",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest --watch",
+    "lint": "eslint",
+    "clean": "rm -rf dist",
+    "build": "tsc --project tsconfig.build.json",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "devDependencies": {
+    "@tsconfig/node-lts": "^24.0.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "@vercel/node": "^5.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-domdomegg": "^2.0.0",
+    "tsconfig-domdomegg": "^1.0.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.24.0",
+    "express": "^5.0.0",
+    "zod": "^3.24.0"
+  }
+}
